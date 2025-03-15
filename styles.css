@@ -1,0 +1,169 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Main Container */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Header */
+h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Input and Buttons */
+input, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.03);
+}
+
+/* Scanner Container */
+#scanner-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Scanner Video */
+#scanner-container video {
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #fff;
+}
+
+/* Stop Button */
+.stop-btn {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.stop-btn:hover {
+    background-color: darkred;
+}
+
+/* Search Results */
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: none;
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Medication Cards */
+.medication-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    border-left: 5px solid #3498db;
+    transition: transform 0.2s;
+}
+
+.medication-card:hover {
+    transform: scale(1.02);
+}
+
+.medication-card p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.medication-card strong {
+    color: #2c3e50;
+}
+
+/* No Results Message */
+.no-results {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Loader Animation */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Ensure Video Adapts Properly */
+#interactive, #dataMatrixScanner {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4/3;
+    background: black;
+}
+
+#interactive video, #dataMatrixScanner video {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+}

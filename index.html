@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication Lookup</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="https://unpkg.com/@zxing/library@latest"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Medication Lookup</h1>
+        <p>Search or scan a barcode to find medication details</p>
+
+        <!-- Search Input -->
+        <input type="text" id="searchInput" placeholder="Enter GTIN or Name">
+        <button id="searchBtn">Search</button>
+
+        <!-- Tab Buttons -->
+        <div class="tab-buttons">
+            <button id="barcodeBtn" class="tab-button">Scan Barcode</button>
+            <button id="dataMatrixBtn" class="tab-button">Scan Data Matrix</button>
+        </div>
+
+        <!-- Scanner Area -->
+        <div id="scanner-container">
+            <p>Align the barcode or data matrix in the scanner area</p>
+            <div id="interactive" class="viewport"></div>
+                <div id="scanner-view"></div>
+                <div id="dataMatrixScanner"></div>
+                <video id="scanner" style="width: 100%;"></video>
+            </div>
+        </div>
+
+        <!-- Loader Animation -->
+        <div class="loader" id="loader"></div>
+
+        <!-- Results Section -->
+        <div id="result">
+            <h2>Search Results</h2>
+            <p>No results yet. Search or scan to see details.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
