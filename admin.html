@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <a href="index.html">🔙 Back to Search</a>
+
+        <h2>Add Medication</h2>
+        <input type="text" id="medName" placeholder="Medication Name">
+        <input type="text" id="medNotes" placeholder="Notes">
+        <input type="text" id="medDose" placeholder="Default Dose">
+        <button onclick="addMedication()">Add Medication</button>
+
+        <h2>Add Schedule</h2>
+        <input type="text" id="schedDay" placeholder="Day (e.g. Monday)">
+        <input type="text" id="schedTime" placeholder="Time (e.g. 08:00)">
+        <input type="text" id="schedMedId" placeholder="Medication ID">
+        <input type="text" id="schedDose" placeholder="Dose for this time">
+        <button onclick="addSchedule()">Add Schedule</button>
+
+        <h2>Log Event</h2>
+        <select id="eventType">
+            <option value="door_open">Door Open</option>
+            <option value="med_removed">Medication Removed</option>
+            <option value="med_returned">Medication Returned</option>
+            <option value="buzzer">Buzzer Sounded</option>
+        </select>
+        <input type="text" id="eventMed" placeholder="Medication ID (optional)">
+        <input type="text" id="eventReason" placeholder="Reason (optional)">
+        <button onclick="logEvent()">Log Event</button>
+
+        <h2>Logs</h2>
+        <a href="logs.html"><button>View Logs</button></a>
+    </div>
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
